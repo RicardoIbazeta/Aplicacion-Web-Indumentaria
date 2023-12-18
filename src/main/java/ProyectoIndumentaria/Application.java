@@ -1,4 +1,4 @@
-package com.eggScaloneta.ProyectoIndumentaria;
+package ProyectoIndumentaria;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

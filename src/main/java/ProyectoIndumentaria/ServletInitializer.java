@@ -1,4 +1,4 @@
-package com.eggScaloneta.ProyectoIndumentaria;
+package ProyectoIndumentaria;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
