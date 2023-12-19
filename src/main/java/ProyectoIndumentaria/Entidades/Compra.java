@@ -1,9 +1,10 @@
 package ProyectoIndumentaria.Entidades;
        
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+
 import java.util.Date;
 import java.util.List;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
     

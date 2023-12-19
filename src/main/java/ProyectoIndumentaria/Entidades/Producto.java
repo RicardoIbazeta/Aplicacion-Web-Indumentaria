@@ -4,6 +4,9 @@ package ProyectoIndumentaria.Entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -15,8 +18,12 @@ public class Producto {
     private String id;
     private String nombre;
     private Double precio;
+    
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
     private Categoria categoria;
     private Boolean altaBaja;
+    @OneToOne
     private Imagen imagen;
     private String talle;
     private int cantidad;

@@ -5,9 +5,13 @@ package ProyectoIndumentaria.Entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Cliente {
     
     
@@ -21,6 +25,7 @@ public class Cliente {
     private String descripcion;
     private Double precio;
     private int cantidadEnInventario;
+    @OneToOne
     private Categoria categoria;
     private String material;
     private String talle;
