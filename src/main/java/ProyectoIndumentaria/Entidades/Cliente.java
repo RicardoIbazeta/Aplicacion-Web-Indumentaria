@@ -24,13 +24,18 @@ public class Cliente {
     private String id;
     private String nombre;
     private String apellido;
-    private String mail;
+    private String email;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAlta;
     private String password;
     private String telefono;
     private String documento;
     private Boolean altaBaja;
+    private String pais;
+    private String provincia;
+    private String localidad;
+    private String calle;
+    private Integer numero;
 
     public Cliente() {
     }
@@ -59,12 +64,12 @@ public class Cliente {
         this.apellido = apellido;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String mail) {
+        this.email = email;
     }
 
     public Date getFechaAlta() {
@@ -106,12 +111,45 @@ public class Cliente {
     public void setAltaBaja(Boolean altaBaja) {
         this.altaBaja = altaBaja;
     }
-    
-    
-    
-    
-    
-    
-    
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
     
 }

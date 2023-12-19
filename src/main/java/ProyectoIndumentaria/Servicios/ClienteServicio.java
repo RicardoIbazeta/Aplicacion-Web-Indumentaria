@@ -1,4 +1,3 @@
-
 package ProyectoIndumentaria.Servicios;
 
 import ProyectoIndumentaria.Entidades.Cliente;
@@ -15,21 +14,35 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ClienteServicio implements UserDetailsService {
-    
+
     @Autowired
     private ClienteRepositorio clienteRepositorio;
-    
+
     @Transactional
-    public void crearCliente(String nombre, String apellido, String documento, String email, String password, String password2, String telefono, String direccion, boolean altaBaja) throws MiException {
-        
-        validarCliente(nombre, apellido, documento, telefono, direccion);
+    public void crearCliente(String nombre, String apellido, String documento, String email, String password, String password2,
+            String telefono, String pais, String provincia, String localidad, String calle, Integer numero) throws MiException {
+
+        validarCliente(nombre, apellido, documento, telefono, pais, provincia, localidad, calle, numero);
         validarEmail(email);
         validarPassword(password, password2);
-        
+
         Cliente cliente = new Cliente();
-        
-        
-        
+
+        cliente.setNombre(nombre);
+        cliente.setApellido(apellido);
+        cliente.setDocumento(documento);
+        cliente.setEmail(email);
+        cliente.setPassword(password);
+        cliente.setTelefono(telefono);
+        cliente.setPais(pais);
+        cliente.setProvincia(provincia);
+        cliente.setLocalidad(localidad);
+        cliente.setCalle(calle);
+        cliente.setNumero(numero);
+        cliente.setAltaBaja(true);
+
+        clienteRepositorio.save(cliente);
+
     }
 
     @Override
@@ -37,9 +50,9 @@ public class ClienteServicio implements UserDetailsService {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    private void validarCliente(String nombre, String apellido, String documento, String telefono, String direccion) throws MiException {
+    private void validarCliente(String nombre, String apellido, String documento, String telefono, String pais, String provincia, String localidad, String calle, Integer numero) throws MiException {
 
-        if(nombre == null || nombre.isEmpty()){
+        if (nombre == null || nombre.isEmpty()) {
             throw new MiException("Debes completar tu nombre");
         }
         if (apellido == null || apellido.isEmpty()) {
@@ -51,8 +64,20 @@ public class ClienteServicio implements UserDetailsService {
         if (telefono == null || telefono.isEmpty()) {
             throw new MiException("Debes completar tu número de telefono");
         }
-        if (direccion == null || direccion.isEmpty()) {
-            throw new MiException("Debes completar tu dirección");
+        if (pais == null || pais.isEmpty()) {
+            throw new MiException("Debes completar tu pais");
+        }
+        if (provincia == null || provincia.isEmpty()) {
+            throw new MiException("Debes completar tu provincia");
+        }
+        if (localidad == null || localidad.isEmpty()) {
+            throw new MiException("Debes completar tu localidad");
+        }
+        if (calle == null || calle.isEmpty()) {
+            throw new MiException("Debes completar tu calle");
+        }
+        if (numero == null) {
+            throw new MiException("Debes completar tu numero");
         }
     }
 
@@ -61,7 +86,7 @@ public class ClienteServicio implements UserDetailsService {
         if (email == null || email.isEmpty()) {
             throw new MiException("Debes completar tu correo electrónico");
         }
-        
+
         String emailRegex = "^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,4}$";
         Pattern patron = Pattern.compile(emailRegex);
 
@@ -89,5 +114,5 @@ public class ClienteServicio implements UserDetailsService {
             throw new MiException("Las contraseñas deben coincidir");
         }
     }
-    
+
 }
