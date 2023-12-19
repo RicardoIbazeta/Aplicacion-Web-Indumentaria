@@ -2,12 +2,15 @@
 
 package ProyectoIndumentaria.Entidades;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -19,17 +22,15 @@ public class Cliente {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    
-    
     private String nombre;
-    private String descripcion;
-    private Double precio;
-    private int cantidadEnInventario;
-    @OneToOne
-    private Categoria categoria;
-    private String material;
-    private String talle;
-    private String color;
+    private String apellido;
+    private String mail;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaAlta;
+    private String password;
+    private String telefono;
+    private String documento;
+    private Boolean altaBaja;
 
     public Cliente() {
     }
@@ -50,61 +51,64 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public Double getPrecio() {
-        return precio;
+    public String getMail() {
+        return mail;
     }
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
-    public int getCantidadEnInventario() {
-        return cantidadEnInventario;
+    public Date getFechaAlta() {
+        return fechaAlta;
     }
 
-    public void setCantidadEnInventario(int cantidadEnInventario) {
-        this.cantidadEnInventario = cantidadEnInventario;
+    public void setFechaAlta(Date fechaAlta) {
+        this.fechaAlta = fechaAlta;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getMaterial() {
-        return material;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setMaterial(String material) {
-        this.material = material;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String getTalle() {
-        return talle;
+    public String getDocumento() {
+        return documento;
     }
 
-    public void setTalle(String talle) {
-        this.talle = talle;
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
 
-    public String getColor() {
-        return color;
+    public Boolean getAltaBaja() {
+        return altaBaja;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setAltaBaja(Boolean altaBaja) {
+        this.altaBaja = altaBaja;
     }
+    
+    
+    
     
     
     
