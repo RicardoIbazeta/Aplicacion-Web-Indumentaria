@@ -5,6 +5,8 @@ import ProyectoIndumentaria.Entidades.Categoria;
 import ProyectoIndumentaria.Entidades.Producto;
 import ProyectoIndumentaria.Excepciones.MiException;
 import ProyectoIndumentaria.Repositorios.ProductoRepositorio;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,6 +73,16 @@ public class ProductoServicio{
             productoRepositorio.delete(producto);
         }
     } 
+    
+    public List<Producto> listarProductos() {
+
+        List<Producto> productos = new ArrayList();
+
+        productos = productoRepositorio.findAll();
+
+        return productos;
+
+    }
     
     
     private void validarProducto(String nombre, Double precio, Categoria categoria, String talle, Integer cantidad ) throws MiException{
