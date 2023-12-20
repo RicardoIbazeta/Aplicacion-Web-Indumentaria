@@ -16,7 +16,7 @@ public class Vendedor {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;   
  
-    private String mail;
+    private String email;
     private String password;
 
     public Vendedor() {
@@ -30,12 +30,12 @@ public class Vendedor {
         this.id = id;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
