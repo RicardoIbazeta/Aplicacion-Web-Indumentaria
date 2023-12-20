@@ -2,6 +2,7 @@
 
 package ProyectoIndumentaria.Entidades;
 
+import ProyectoIndumentaria.enumeraciones.Rol;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,6 +37,7 @@ public class Cliente {
     private String localidad;
     private String calle;
     private Integer numero;
+    private Rol rol;
 
     public Cliente() {
     }
@@ -68,7 +70,7 @@ public class Cliente {
         return email;
     }
 
-    public void setEmail(String mail) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -151,5 +153,17 @@ public class Cliente {
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+
+
+
     
 }

@@ -1,6 +1,7 @@
 
 package ProyectoIndumentaria.Entidades;
 
+import ProyectoIndumentaria.enumeraciones.Rol;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,6 +19,7 @@ public class Vendedor {
  
     private String email;
     private String password;
+    private Rol rol;
 
     public Vendedor() {
     }
@@ -45,6 +47,16 @@ public class Vendedor {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+
    
     
     

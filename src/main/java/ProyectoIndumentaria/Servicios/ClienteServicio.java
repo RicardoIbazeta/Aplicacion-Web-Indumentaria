@@ -3,15 +3,24 @@ package ProyectoIndumentaria.Servicios;
 import ProyectoIndumentaria.Entidades.Cliente;
 import ProyectoIndumentaria.Excepciones.MiException;
 import ProyectoIndumentaria.Repositorios.ClienteRepositorio;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Service
 public class ClienteServicio implements UserDetailsService {
@@ -96,9 +105,47 @@ public class ClienteServicio implements UserDetailsService {
         }
     }
     
+    // Metodo para obtener un cliente por su id
+        public Cliente getOne(String id) {
+        return clienteRepositorio.getOne(id);
+    }
+
+        
+        // Metodo para listar clientes
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN' )")
+    public List<Cliente> listarUsuarios() {
+
+        List<Cliente> usuarios = new ArrayList();
+        usuarios = clienteRepositorio.findAll();
+
+        return usuarios;
+    }
+    
+    
+    // Metodo usado para autenticar usuarios
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
+        Cliente cliente = clienteRepositorio.buscarPorEmail(email);
+
+        if (cliente != null) {
+
+            List<GrantedAuthority> permisos = new ArrayList();
+
+            GrantedAuthority p = new SimpleGrantedAuthority("ROLE_" + cliente.getRol().toString());
+
+            permisos.add(p);
+
+            ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+
+            HttpSession session = attr.getRequest().getSession(true);
+
+            session.setAttribute("cliente", cliente);
+
+            return new User(cliente.getEmail(), cliente.getPassword(), permisos);
+        } else {
+            return null;
+        }
     }
 
     private void validarCliente(String nombre, String apellido, String documento, String telefono, String pais, String provincia, String localidad, String calle, Integer numero) throws MiException {
