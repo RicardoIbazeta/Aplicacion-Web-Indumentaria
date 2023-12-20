@@ -1,6 +1,7 @@
 package ProyectoIndumentaria.Servicios;
 
 import ProyectoIndumentaria.Entidades.Categoria;
+import ProyectoIndumentaria.Excepciones.MiException;
 import ProyectoIndumentaria.Repositorios.CategoriaRepositorio;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +18,9 @@ public class CategoriaServicio {
 
     // Metodo para crear categorias
     @Transactional
-    public void crearCategoria(String nombre) {
+    public void crearCategoria(String nombre) throws MiException {
 
+        validarCategoria(nombre);
         Categoria categoria = new Categoria();
 
         categoria.setNombre(nombre);
@@ -72,6 +74,11 @@ public class CategoriaServicio {
         return (List<Categoria>) categoriaRepositorio.buscarPorCategoria(query);
     }
 
+    private void validarCategoria(String nombre) throws MiException {
+
+        if (nombre == null || nombre.isEmpty()) {
+            throw new MiException("Debes indicar el nombre de la categoria");
+        }
+    }
+
 }
-
-
