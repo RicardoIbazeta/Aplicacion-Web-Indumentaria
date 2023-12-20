@@ -13,6 +13,7 @@ public class Compra {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+<<<<<<< HEAD
     
     private Double monto;
     
@@ -20,8 +21,15 @@ public class Compra {
     
     private List<Producto> productos;
     
+=======
+    private Double monto;
+    private Cliente cliente;
+    private List<Producto> productos;
+>>>>>>> 845405022b0863b2c12fbc347a9267d598633bbd
     private Date fechaCompra;
 
+    
+    
     public Compra() {
     }
 

@@ -5,6 +5,7 @@ import ProyectoIndumentaria.Entidades.Categoria;
 import ProyectoIndumentaria.Entidades.Producto;
 import ProyectoIndumentaria.Excepciones.MiException;
 import ProyectoIndumentaria.Repositorios.ProductoRepositorio;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,9 +36,41 @@ public class ProductoServicio{
         
         
         productoRepositorio.save(producto);
-        
-        
     }
+    
+    
+    @Transactional
+    public void modificarProducto (String id, String nombre, Double precio, Categoria categoria, String talle, Integer cantidad ) throws MiException{
+        
+        
+        Optional <Producto>  respuesta= productoRepositorio.findById(id);
+        
+        if (respuesta.isPresent()){
+            Producto producto= respuesta.get();
+            
+            
+            validarProducto(nombre, precio, categoria, talle, cantidad);
+            
+            producto.setNombre(nombre);
+            producto.setPrecio(precio);
+            producto.setCantidad(cantidad);
+            producto.setTalle(talle);
+            producto.setCategoria(categoria);
+            producto.setAltaBaja(true);
+            
+            
+            productoRepositorio.save(producto);
+        }
+    }
+    
+    
+    @Transactional
+    public void eliminar(Producto producto) {
+        Optional<Producto> respuesta = productoRepositorio.findById(producto.getId());
+        if (respuesta.isPresent()) {
+            productoRepositorio.delete(producto);
+        }
+    } 
     
     
     private void validarProducto(String nombre, Double precio, Categoria categoria, String talle, Integer cantidad ) throws MiException{
@@ -51,10 +84,9 @@ public class ProductoServicio{
             throw new MiException("Debes completar el talle");
         }
         if (cantidad == null ) {
-            throw new MiException("Debes completar la cantidad de productos: " + nombre);
+            throw new MiException("Debes completar la cantidad de productos");
         }
     }
-    
     
     
     
