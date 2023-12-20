@@ -21,13 +21,8 @@ public class CompraServicio {
         compra.setCliente(cliente);
         compra.setMonto(producto.getPrecio());
         compra.setFechaCompra(new Date());
+        compra.setProducto(producto);
         compraRepositorio.save(compra);
-    }
-    
-    public void modificarCompra(String id){
-        
-       Optional <Compra> respuesta = 
-        
     }
     
 }
