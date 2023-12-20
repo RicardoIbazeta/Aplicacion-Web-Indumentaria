@@ -1,29 +1,26 @@
 
-package ProyectoIndumentaria.Entidades;
 
-import javax.persistence.Basic;
+package ProyectoIndumentaria.entidades;
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
-public class Imagen {
+public class Categoria {
+    
     
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     
-    private String mime;
+    
     private String nombre;
-    @Lob @Basic(fetch = FetchType.LAZY)
-    private byte[] contenido;
+    private Boolean altaBaja;
 
-    public Imagen() {
+    public Categoria() {
     }
 
     public String getId() {
@@ -34,14 +31,6 @@ public class Imagen {
         this.id = id;
     }
 
-    public String getMime() {
-        return mime;
-    }
-
-    public void setMime(String mime) {
-        this.mime = mime;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -50,12 +39,16 @@ public class Imagen {
         this.nombre = nombre;
     }
 
-    public byte[] getContenido() {
-        return contenido;
+    public Boolean getAltaBaja() {
+        return altaBaja;
     }
 
-    public void setContenido(byte[] contenido) {
-        this.contenido = contenido;
+    public void setAltaBaja(Boolean altaBaja) {
+        this.altaBaja = altaBaja;
     }
+
+   
+    
+    
     
 }

@@ -1,8 +1,8 @@
-package ProyectoIndumentaria.Servicios;
+package ProyectoIndumentaria.servicios;
 
-import ProyectoIndumentaria.Entidades.Imagen;
-import ProyectoIndumentaria.Excepciones.MiException;
-import ProyectoIndumentaria.Repositorios.ImagenRepositorio;
+import ProyectoIndumentaria.entidades.Imagen;
+import ProyectoIndumentaria.excepciones.MiException;
+import ProyectoIndumentaria.repositorios.ImagenRepositorio;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;

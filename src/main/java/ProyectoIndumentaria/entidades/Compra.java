@@ -1,4 +1,4 @@
-package ProyectoIndumentaria.Entidades;
+package ProyectoIndumentaria.entidades;
        
 
 import java.util.Date;

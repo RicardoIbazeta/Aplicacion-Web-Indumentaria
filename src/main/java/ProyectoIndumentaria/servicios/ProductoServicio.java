@@ -1,10 +1,10 @@
 
-package ProyectoIndumentaria.Servicios;
+package ProyectoIndumentaria.servicios;
 
-import ProyectoIndumentaria.Entidades.Categoria;
-import ProyectoIndumentaria.Entidades.Producto;
-import ProyectoIndumentaria.Excepciones.MiException;
-import ProyectoIndumentaria.Repositorios.ProductoRepositorio;
+import ProyectoIndumentaria.entidades.Categoria;
+import ProyectoIndumentaria.entidades.Producto;
+import ProyectoIndumentaria.excepciones.MiException;
+import ProyectoIndumentaria.repositorios.ProductoRepositorio;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

@@ -1,5 +1,5 @@
 
-package ProyectoIndumentaria.Entidades;
+package ProyectoIndumentaria.entidades;
 
 import ProyectoIndumentaria.enumeraciones.Rol;
 import javax.persistence.Entity;

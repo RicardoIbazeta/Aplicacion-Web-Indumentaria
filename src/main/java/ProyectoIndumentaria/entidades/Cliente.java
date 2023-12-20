@@ -1,6 +1,6 @@
 
 
-package ProyectoIndumentaria.Entidades;
+package ProyectoIndumentaria.entidades;
 
 import ProyectoIndumentaria.enumeraciones.Rol;
 import java.util.Date;

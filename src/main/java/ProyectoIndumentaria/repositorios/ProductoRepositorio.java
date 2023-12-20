@@ -1,7 +1,7 @@
-package ProyectoIndumentaria.Repositorios;
+package ProyectoIndumentaria.repositorios;
 
-import ProyectoIndumentaria.Entidades.Categoria;
-import ProyectoIndumentaria.Entidades.Producto;
+import ProyectoIndumentaria.entidades.Categoria;
+import ProyectoIndumentaria.entidades.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

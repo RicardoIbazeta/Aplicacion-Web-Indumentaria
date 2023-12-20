@@ -1,9 +1,9 @@
 
-package ProyectoIndumentaria.Servicios;
+package ProyectoIndumentaria.servicios;
 
-import ProyectoIndumentaria.Entidades.Vendedor;
-import ProyectoIndumentaria.Excepciones.MiException;
-import ProyectoIndumentaria.Repositorios.VendedorRepositorio;
+import ProyectoIndumentaria.entidades.Vendedor;
+import ProyectoIndumentaria.excepciones.MiException;
+import ProyectoIndumentaria.repositorios.VendedorRepositorio;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

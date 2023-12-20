@@ -1,10 +1,10 @@
 
-package ProyectoIndumentaria.Servicios;
+package ProyectoIndumentaria.servicios;
 
-import ProyectoIndumentaria.Entidades.Cliente;
-import ProyectoIndumentaria.Entidades.Compra;
-import ProyectoIndumentaria.Entidades.Producto;
-import ProyectoIndumentaria.Repositorios.CompraRepositorio;
+import ProyectoIndumentaria.entidades.Cliente;
+import ProyectoIndumentaria.entidades.Compra;
+import ProyectoIndumentaria.entidades.Producto;
+import ProyectoIndumentaria.repositorios.CompraRepositorio;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;

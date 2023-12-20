@@ -1,8 +1,8 @@
-package ProyectoIndumentaria.Servicios;
+package ProyectoIndumentaria.servicios;
 
-import ProyectoIndumentaria.Entidades.Categoria;
-import ProyectoIndumentaria.Excepciones.MiException;
-import ProyectoIndumentaria.Repositorios.CategoriaRepositorio;
+import ProyectoIndumentaria.entidades.Categoria;
+import ProyectoIndumentaria.excepciones.MiException;
+import ProyectoIndumentaria.repositorios.CategoriaRepositorio;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

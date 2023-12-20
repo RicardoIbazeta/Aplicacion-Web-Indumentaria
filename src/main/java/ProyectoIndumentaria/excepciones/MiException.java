@@ -1,4 +1,4 @@
-package ProyectoIndumentaria.Excepciones;
+package ProyectoIndumentaria.excepciones;
 
 public class MiException extends Exception {
     
