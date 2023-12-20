@@ -11,4 +11,9 @@ import org.springframework.stereotype.Repository;
 public interface CategoriaRepositorio extends JpaRepository<Categoria, String>{
     @Query("SELECT c FROM Categoria c WHERE c.id= :id")
     public Categoria buscarPorId(@Param ("id")String id);
+    
+    @Query("SELECT c FROM Categoria c WHERE c.nombre = :nombre")
+    public Categoria buscarPorCategoria(@Param ("nombre")String nombre);
+    
 }
+
