@@ -115,10 +115,10 @@ public class ClienteServicio implements UserDetailsService {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN' )")
     public List<Cliente> listarUsuarios() {
 
-        List<Cliente> usuarios = new ArrayList();
-        usuarios = clienteRepositorio.findAll();
+        List<Cliente> clientes = new ArrayList();
+        clientes = clienteRepositorio.findAll();
 
-        return usuarios;
+        return clientes;
     }
     
     
