@@ -25,4 +25,17 @@ public class CompraServicio {
         compraRepositorio.save(compra);
     }
     
+    
+    
+    
+    public void cancelarCompra(String id){
+        Optional <Compra> respuesta= compraRepositorio.findById(id);
+        if (respuesta.isPresent()){
+            Compra compra = respuesta.get();
+            compraRepositorio.delete(compra);
+        }
+    }
+    
+    
+    
 }
