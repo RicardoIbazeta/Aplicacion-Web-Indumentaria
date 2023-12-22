@@ -2,13 +2,31 @@
 <html 
     xmlns:th="http://www.thymeleaf.org"
     xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-    
+
     <head th:replace="~{/fragments/head :: head}"></head>
-    
+
     <body>
-        <header th:replace="~{/fragments/header :: header}"></header>
-        
-        
-        <!--<footer th:replace="~{/fragments/footer :: footer}"></footer>-->
+        <div id="index">
+            <header th:replace="~{/fragments/header :: header}"></header>
+            
+            <br><br><br><br><br><br><br><br>
+            <div class="px-4 py-5 my-5 text-center text-light">
+                <h1 class="display-5 fw-bold">TRUE BLUE</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Descubre la perfecta fusión entre moda y funcionalidad al explorar nuestro extenso catálogo de jeans 
+                        que se adaptan a todas las ocasiones. Desde los clásicos y versátiles modelos hasta las últimas tendencias en denim, 
+                        tenemos la prenda ideal para cada personalidad y estilo de vida.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="button" class="btn btn-light">SHOP NOW</button>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br><br>
+
+
+
+
+            <!--<footer th:replace="~{/fragments/footer :: footer}"></footer>-->
+        </div>
     </body>
 </html>

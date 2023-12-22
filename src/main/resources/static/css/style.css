@@ -1,0 +1,10 @@
+#index{
+    background: url('../img/fondo.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+/* Personaliza la flecha del dropdown */
+.dropdown-toggle::after {
+    border-top-color: white; 
+}
