@@ -8,13 +8,13 @@
     <body>
         <div id="index">
             <header th:replace="~{/fragments/header :: header}"></header>
-            
+
             <br><br><br><br><br><br><br><br>
             <div class="px-4 py-5 my-5 text-center text-light">
                 <h1 class="display-5 fw-bold">TRUE BLUE</h1>
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Descubre la perfecta fusión entre moda y funcionalidad al explorar nuestro extenso catálogo de jeans 
-                        que se adaptan a todas las ocasiones. Desde los clásicos y versátiles modelos hasta las últimas tendencias en denim, 
+                    <p class="lead mb-4">Descubre la perfecta fusión entre moda y funcionalidad al explorar nuestro extenso catálogo
+                        que se adaptan a todas las ocasiones. Desde los clásicos y versátiles modelos hasta las últimas tendencias, 
                         tenemos la prenda ideal para cada personalidad y estilo de vida.</p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <button type="button" class="btn btn-light">SHOP NOW</button>
@@ -23,7 +23,42 @@
             </div>
             <br><br><br><br><br><br><br><br>
 
-
+            <div id="categoria">
+                <br><br>
+                <h3 style="color: white; text-align: center;">EXPLORE NUESTRAS CATEGORIAS</h3>
+                <br>
+                <div style="text-align: center;">
+                    <div style="display: inline-block; margin: 0 50px;">
+                        <a href="#"><img th:src="@{img/pantalon.png}" style="display: block; margin: 0 auto;" /></a>
+                        <br>
+                        <a href="#" style="color: white; display: block; text-decoration: none;">PANTALONES</a>
+                    </div>
+                    <div style="display: inline-block; margin: 0 50px;">
+                        <a href="#"><img th:src="@{img/remera.png}" style="display: block; margin: 0 auto;" /></a>
+                        <br>
+                        <a href="#" style="color: white; display: block; text-decoration: none;">REMERAS</a>
+                    </div>
+                    <div style="display: inline-block; margin: 0 50px;">
+                        <a href="#"><img th:src="@{img/camisa.png}" style="display: block; margin: 0 auto;" /></a>
+                        <br>
+                        <a href="#" style="color: white; display: block; text-decoration: none;">CAMISAS</a>
+                    </div>
+                    <div style="display: inline-block; margin: 0 50px;">
+                        <a href="#"><img th:src="@{img/campera.png}" style="display: block; margin: 0 auto;" /></a>
+                        <br>
+                        <a href="#" style="color: white; display: block; text-decoration: none;">CAMPERAS</a>
+                    </div>
+                    <div style="display: inline-block; margin: 0 50px;">
+                        <a href="#"><img th:src="@{img/zapatillas.png}" style="display: block; margin: 0 auto;" /></a>
+                        <br>
+                        <a href="#" style="color: white; display: block; text-decoration: none;">ZAPATILLAS</a>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+            
+            
+            <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br>
 
 
             <!--<footer th:replace="~{/fragments/footer :: footer}"></footer>-->

@@ -1,3 +1,4 @@
+/*Img de fondo en index*/
 #index{
     background: url('../img/fondo.png');
     background-repeat: no-repeat;
@@ -7,4 +8,23 @@
 /* Personaliza la flecha del dropdown */
 .dropdown-toggle::after {
     border-top-color: white; 
+}
+
+/* Deja fijo el header */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    transition: background-color 0.3s ease;
+}
+
+/* Cambia a tu color deseado cuando se hace scroll */
+header.scrolled {
+    background-color: #131a20; 
+}
+
+/* Fondo del div de las categorias */
+#categoria{
+    background-color: #486481;;
 }
