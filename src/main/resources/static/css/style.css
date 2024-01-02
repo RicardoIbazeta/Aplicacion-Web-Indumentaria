@@ -1,7 +1,7 @@
 /*HEADER*/
 /* Personaliza la flecha del dropdown en el header*/
 .dropdown-toggle::after {
-    border-top-color: white; 
+    border-top-color: white;
 }
 
 /* Deja fijo el header */
@@ -9,13 +9,13 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1000; 
+    z-index: 1000;
     transition: background-color 0.3s ease;
 }
 
 /* Cambia a tu color deseado cuando se hace scroll */
 header.scrolled {
-    background-color: #131a20; 
+    background-color: #131a20;
 }
 /*----------------------------------------------------*/
 
@@ -25,7 +25,8 @@ header.scrolled {
     background: url('../img/fondo.png');
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 100% auto;
+    height: 100%; 
+    width: 100%;
 }
 
 /* Fondo del div de las categorias */
@@ -38,7 +39,7 @@ header.scrolled {
 /*Estilos a las categorias*/
 #categ{
     display: inline-block;
-    margin: 0 50px;
+    margin: 0 20px;
 }
 
 #categ img{
@@ -55,6 +56,18 @@ header.scrolled {
 /* Estilo a las razones */
 #razones{
     display: flex;
-    margin: 10px;
+    padding-right: 100px;
+}
+
+/* Contact us */
+#contactus{
+    background-color: #486481;
+    text-align: center;
+    color: white;
+}
+
+/* Redondear img */
+.rounded-image {
+    border-radius: 100px;
 }
 /*----------------------------------------------------*/
